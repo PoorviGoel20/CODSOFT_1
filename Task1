@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Task1 {
+    public static void main(String[] args) {
+        int secretNumber, userGuess;
+        final int MAX_NUMBER = 100;
+
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        boolean guessedCorrectly = false;
+        secretNumber = random.nextInt(MAX_NUMBER) + 1; 
+
+        while (!guessedCorrectly) {
+            System.out.print("Guess a number between 1 and 100: ");
+            userGuess = scanner.nextInt();
+
+            if (userGuess > secretNumber) {
+                System.out.println("Too high, try again.");
+            } else if (userGuess < secretNumber) {
+                System.out.println("Too low, try again.");
+            } else {
+                System.out.println("Congratulations! You guessed the number.");
+                guessedCorrectly = true;
+            }
+        }
+        
+        scanner.close();
+    }
+}
